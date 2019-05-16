@@ -3,7 +3,7 @@ All changes with a new version release should go in detail over here.
 
 ## [0.1.0] - 2019-05-16
 ### Added
-- Add 1
+- Added actual dictionary for the lookup
 - Add 2
 
 ### Changed

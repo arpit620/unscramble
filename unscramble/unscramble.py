@@ -14,7 +14,9 @@ class Unscramble:
     def load_dictionary(self):
         """To Do
         """
-        self.dictionary = ["hello", "world", "hell", "ehll", "ehl"]
+        fileName = '../data/words_alpha.txt'
+        self.dictionary = [line.rstrip('\n') for line in open(fileName)]
+        # self.dictionary = ["hello", "world", "hell", "ehll", "ehl"]
 
     def get_word_lengths(self, upto):
         """ To Do
@@ -24,7 +26,7 @@ class Unscramble:
         word_lengths = word_lengths[:-upto]
         return word_lengths
 
-    def create_permutations(self, upto=3, exact_length=None):
+    def create_permutations(self, upto=4, exact_length=None):
         """To Do
         """
         self._all_permutations = []
