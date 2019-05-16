@@ -1,3 +1,3 @@
-from unscramble.unscramble import Unscramble
+from unscramble import Unscramble
 a = Unscramble("Hell")
 print(a.generate_words())

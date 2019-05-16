@@ -1,1 +1,1 @@
-from . import unscramble
+from .unscramble import Unscramble
