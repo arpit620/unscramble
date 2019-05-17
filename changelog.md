@@ -23,7 +23,5 @@ All changes with a new version release should go in detail over here.
 ## To Do
 
 - Optimization: Make the process faster by using parallelization.
-- Pass proper parameters to each method of the class.
 - Scale up. Currently can't be used for big words.
-- User should have flexibility to see custom words. Return the default dict.
 - Add a functionality to specify range for # of characters in a word.

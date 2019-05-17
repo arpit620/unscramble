@@ -1,7 +1,9 @@
 from itertools import permutations
 from tqdm import tqdm
 from collections import defaultdict
+
 # from tqdm import tqdm_notebook as tqdm
+
 
 class Unscramble:
     """To Do
@@ -15,8 +17,8 @@ class Unscramble:
     def _load_dictionary(self):
         """To Do
         """
-        fileName = '../data/words_alpha.txt'
-        self.dictionary = [line.rstrip('\n') for line in open(fileName)]
+        fileName = "../data/words_alpha.txt"
+        self.dictionary = [line.rstrip("\n") for line in open(fileName)]
         # self.dictionary = ["hello", "world", "hell", "ehll", "ehl"]
 
     def _get_word_lengths(self, upto):
@@ -55,7 +57,7 @@ class Unscramble:
         """
         return len(possible_words)
 
-    def _get_defaultdict(self,actual_words):
+    def _get_defaultdict(self, actual_words):
         """To Do
         """
         dict_words = defaultdict(list)
@@ -67,11 +69,11 @@ class Unscramble:
     def _print_dict(self, actual_words):
         """To Do
         """
-        for no_of_char,word_list in sorted(actual_words.items(), reverse=True):
+        for no_of_char, word_list in sorted(actual_words.items(), reverse=True):
             print("\n---------------------------------------\n")
             print(no_of_char, " letter words: \n")
             print(word_list)
-            
+
         print("\n---------------------------------------\n")
 
     def find_words(self, upto=4, exact_length=None):
@@ -80,14 +82,12 @@ class Unscramble:
         self._load_dictionary()
         possible_words = self._create_permutations(upto, exact_length)
         actual_words = [
-            word for word in tqdm(possible_words, desc="Dictionary Lookup") 
-                if word in self.dictionary
+            word
+            for word in tqdm(possible_words, desc="Dictionary Lookup")
+            if word in self.dictionary
         ]
 
         actual_words = self._get_defaultdict(actual_words)
         self._print_dict(actual_words)
         # self.actual_words = get_dictionary(self.actual_words)
         return actual_words
-
-
-
