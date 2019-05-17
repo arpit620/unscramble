@@ -2,28 +2,22 @@ import pytest
 from unscramble import Unscramble
 from collections import defaultdict
 
-# a = Unscramble("search")
-# b = a.find_words()
-
-# print(b[5])
-
-# Fixture yet to figure out
 @pytest.fixture
 def unscramble():
-    words = Unscramble("Hello")
+    words = Unscramble("Search")
     return words
 
 
-def test_load_dictionary():
-    words = Unscramble("Search")
-    dictionary = words._load_dictionary()
+def test_load_dictionary(unscramble):
+    # words = Unscramble("Search")
+    dictionary = unscramble._load_dictionary()
     assert isinstance(dictionary, list), "Dictionary not a list"
     assert len(dictionary) > 1, "Dictionary is less than 100"
 
 
-def test_get_word_lenghts():
-    words = Unscramble("Search")
-    word_lengths = words._get_word_lengths(upto=4)
+def test_get_word_lenghts(unscramble):
+    # words = Unscramble("Search")
+    word_lengths = unscramble._get_word_lengths(upto=4)
     assert word_lengths == [6, 5, 4], "Word length not matching"
 
 
@@ -47,6 +41,7 @@ def test_get_defaultdict():
 def test_find_words():
     words = Unscramble("Hello")
     dict_words = words.find_words()
-    assert len(dict_words[5]) == 1
-    assert len(dict_words[4]) == 3
-    assert len(dict_words[3]) == 0
+    assert len(dict_words[5]) == 1, "Length not 1"
+    assert len(dict_words[4]) == 3, "Length not 3"
+    assert len(dict_words[3]) == 0, "Length more than 0"
+    assert len(dict_words[6]) == 0, "Length more than 0"
