@@ -18,7 +18,8 @@ class Unscramble:
         """To Do
         """
         fileName = "../data/words_alpha.txt"
-        self.dictionary = [line.rstrip("\n") for line in open(fileName)]
+        dictionary = [line.rstrip("\n") for line in open(fileName)]
+        return dictionary
         # self.dictionary = ["hello", "world", "hell", "ehll", "ehl"]
 
     def _get_word_lengths(self, upto):
@@ -79,12 +80,12 @@ class Unscramble:
     def find_words(self, upto=4, exact_length=None):
         """To Do
         """
-        self._load_dictionary()
+        dictionary = self._load_dictionary()
         possible_words = self._create_permutations(upto, exact_length)
         actual_words = [
             word
             for word in tqdm(possible_words, desc="Dictionary Lookup")
-            if word in self.dictionary
+            if word in dictionary
         ]
 
         actual_words = self._get_defaultdict(actual_words)

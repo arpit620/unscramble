@@ -1,5 +1,5 @@
 from unscramble import Unscramble
-a = Unscramble("search")
+a = Unscramble("hello")
 b = a.find_words()
 
-print(b[5])
+# print(b[5])
