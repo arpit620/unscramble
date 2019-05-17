@@ -1,3 +1,3 @@
 from unscramble import Unscramble
-a = Unscramble("Hell")
-print(a.generate_words())
+a = Unscramble("Unscramble")
+a.find_words()

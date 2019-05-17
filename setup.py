@@ -7,7 +7,7 @@ Generate dictionary words by unscramblig provided word.
 
 setup(
     name='Unscramble',
-    version='0.1',
+    version='0.2',
     description='Unscramble a word',
     author='Arpit Gupta',
     author_email='arpit.gupta@ucdconnect.ie',
