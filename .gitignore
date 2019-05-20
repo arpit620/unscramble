@@ -1,7 +1,7 @@
 .ipynb_checkpoints/
 __pycache__/
 Unscramble.egg-info/
-data/custom_dict.txt
+unscramble/data/custom_dict.txt
 
 # Compiled python modules.
 *.pyc
