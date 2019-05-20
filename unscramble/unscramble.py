@@ -1,7 +1,7 @@
 from itertools import permutations
 from tqdm import tqdm
 from collections import defaultdict
-
+import os
 # from tqdm import tqdm_notebook as tqdm
 
 
@@ -17,10 +17,10 @@ class Unscramble:
     def _load_dictionary(self):
         """To Do
         """
-        fileName = "../data/words_alpha.txt"
+        path = os.path.abspath(os.path.dirname(__file__))
+        fileName = os.path.join(path, '../data/words_alpha.txt')
         dictionary = [line.rstrip("\n") for line in open(fileName)]
         return dictionary
-        # self.dictionary = ["hello", "world", "hell", "ehll", "ehl"]
 
     def _get_word_lengths(self, upto):
         """ To Do

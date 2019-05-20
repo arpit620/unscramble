@@ -16,6 +16,9 @@ setup(
     license='MIT',
     # long_description=open('README.MD').read(),
     long_description='Long description goes here',
+    install_requires=[
+          'tqdm',
+      ],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
