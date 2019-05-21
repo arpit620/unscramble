@@ -6,32 +6,69 @@ import os
 
 
 class Unscramble:
-    """To Do
+    """Class to create multiple dictionary words of different length
+    from a given english word.
     """
 
     def __init__(self, word):
-        """To Do
+        """Initialize the class instance.
+        Convert the word to lower case.
         """
         self.word = word.lower()
 
     def _load_dictionary(self):
-        """To Do
+        """Loads the dictionary from ``data/words_alpha.txt`` folder 
+
+        Parameter
+        ---------
+
+
+        Returns
+        -------
+        A list of words which contains the actual english dictionary words.
+
         """
         path = os.path.abspath(os.path.dirname(__file__))
         fileName = os.path.join(path, 'data/words_alpha.txt')
         dictionary = [line.rstrip("\n") for line in open(fileName)]
+        
         return dictionary
 
     def _get_word_lengths(self, upto):
-        """ To Do
+        """ Returns the word length
+
+        Parameter
+        ---------
+        upto : int
+            Specify minimum length of the created word
+
+        Return
+        ------
+        word_lengths : list(int) 
+            List of allowed word length
+
         """
         orig_word_len = len(self.word)
         word_lengths = list(reversed(range(orig_word_len + 1)))
         word_lengths = word_lengths[:-upto]
+
         return word_lengths
 
     def _create_permutations(self, upto=4, exact_length=None):
-        """To Do
+        """Create all possible permutations for the given word.
+
+        Parameter
+        ---------
+        upto : int
+            Specify minimum length of the created word
+        exact_length : int
+            Specify the exact length of unscrambled word to look for.
+
+        Return
+        ------
+        possible_words : list(str)
+            list of all possible word variations for given word
+
         """
         self._all_permutations = []
 
@@ -51,15 +88,43 @@ class Unscramble:
             word for word_list in self._all_permutations for word in word_list
         ]
         possible_words = list(set(possible_words))
+
         return possible_words
 
     def _total_permutations(self, possible_words):
-        """To Do
+        """Computes the length of possible permutations
+
+        Parameter
+        ---------
+        possible_words : list(str)
+            List of all possible permutations
+
+        Return
+        ------
+        length : int
+            # of possible permutation
+
         """
         return len(possible_words)
 
     def _get_defaultdict(self, actual_words):
-        """To Do
+        """Creates a structured ``defaultdict`` (from the ``collections`` 
+        pacakge) for the unscrambled list of dictionary words.
+
+        This creates a dictionary out of a list where ``key`` specifies 
+        the length of the word and ``value`` is list of words of ``key`` length.
+
+        Parameter
+        ---------
+        actual_words : list(str)
+            List of unscrambled dictionary words
+
+        Return
+        ------
+        dictionary_words : defultdict(list)
+            Dictionary where key represent # of characters in word and
+            value is the list of words.
+
         """
         dict_words = defaultdict(list)
         for word in actual_words:
@@ -68,7 +133,18 @@ class Unscramble:
         return dict_words
 
     def _print_dict(self, actual_words):
-        """To Do
+        """Print dictionary in a user friendly format
+
+        Parameter
+        ---------
+        actual_words : defaultdict(list)
+            Dict of unscrambled words
+
+        Return
+        ------
+        NA
+            Prints the dict 
+
         """
         for no_of_char, word_list in sorted(actual_words.items(), reverse=True):
             print("\n---------------------------------------\n")
@@ -78,7 +154,27 @@ class Unscramble:
         print("\n---------------------------------------\n")
 
     def find_words(self, upto=4, exact_length=None):
-        """To Do
+        """Find other dictionary words out of a given word.
+
+        Internally does following:
+            - Loads dictionary
+            - Create all possible permutations 
+            - Lookup in dictionary
+            - Convert to dictionary
+            - Prints the output
+
+        Parameter
+        ---------
+        upto : int
+            Specify minimum length of the created word
+        exact_length : int
+            Specify the exact length of unscrambled word to look for.
+
+        Return
+        ------
+        unscrambled_words : defaultdict(list)
+            Dict of words of different lengths
+
         """
         dictionary = self._load_dictionary()
         possible_words = self._create_permutations(upto, exact_length)
@@ -90,5 +186,5 @@ class Unscramble:
 
         actual_words = self._get_defaultdict(actual_words)
         self._print_dict(actual_words)
-        # self.actual_words = get_dictionary(self.actual_words)
+
         return actual_words
