@@ -11,3 +11,8 @@ unzip file.zip
 # To run pytest inside test folder
 py.test                # To run all
 py.test file.py        # To run specific file
+
+# To run make files
+make check
+make test
+make docs
