@@ -19,8 +19,9 @@ class Unscramble:
     def _load_dictionary(self):
         """Loads the dictionary from ``data/words_alpha.txt`` folder 
 
-        Parameter
-        ---------
+        Parameters
+        ----------
+        None
 
 
         Returns
@@ -37,8 +38,8 @@ class Unscramble:
     def _get_word_lengths(self, upto):
         """ Returns the word length
 
-        Parameter
-        ---------
+        Parameters
+        ----------
         upto : int
             Specify minimum length of the created word
 
@@ -57,8 +58,8 @@ class Unscramble:
     def _create_permutations(self, upto=4, exact_length=None):
         """Create all possible permutations for the given word.
 
-        Parameter
-        ---------
+        Parameters
+        ----------
         upto : int
             Specify minimum length of the created word
         exact_length : int
@@ -94,8 +95,8 @@ class Unscramble:
     def _total_permutations(self, possible_words):
         """Computes the length of possible permutations
 
-        Parameter
-        ---------
+        Parameters
+        ----------
         possible_words : list(str)
             List of all possible permutations
 
@@ -114,13 +115,13 @@ class Unscramble:
         This creates a dictionary out of a list where ``key`` specifies 
         the length of the word and ``value`` is list of words of ``key`` length.
 
-        Parameter
-        ---------
+        Parameters
+        ----------
         actual_words : list(str)
             List of unscrambled dictionary words
 
-        Return
-        ------
+        Returns
+        -------
         dictionary_words : defultdict(list)
             Dictionary where key represent # of characters in word and
             value is the list of words.
@@ -135,13 +136,13 @@ class Unscramble:
     def _print_dict(self, actual_words):
         """Print dictionary in a user friendly format
 
-        Parameter
-        ---------
+        Parameters
+        ----------
         actual_words : defaultdict(list)
             Dict of unscrambled words
 
-        Return
-        ------
+        Returns
+        -------
         NA
             Prints the dict 
 
@@ -155,16 +156,17 @@ class Unscramble:
 
     def find_words(self, upto=4, exact_length=None):
         """Find other dictionary words out of a given word.
+        
+        Internally calls following methods:
 
-        Internally does following:
             - Loads dictionary
             - Create all possible permutations 
             - Lookup in dictionary
             - Convert to dictionary
             - Prints the output
 
-        Parameter
-        ---------
+        Parameters
+        ----------
         upto : int
             Specify minimum length of the created word
         exact_length : int
