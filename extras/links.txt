@@ -2,3 +2,8 @@
 # Pytest tutorial
 https://www.guru99.com/pytest-tutorial.html
 
+# Python Virtual Environment
+https://realpython.com/python-virtual-environments-a-primer/
+
+
+
