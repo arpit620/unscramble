@@ -5,5 +5,7 @@ https://www.guru99.com/pytest-tutorial.html
 # Python Virtual Environment
 https://realpython.com/python-virtual-environments-a-primer/
 
+# Upload a package to PyPI
+https://dzone.com/articles/executable-package-pip-install
 
 

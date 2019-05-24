@@ -14,3 +14,6 @@ unscramble/data/custom_dict.txt
 
 .DS_Store
 docs/build
+
+build/
+dist/

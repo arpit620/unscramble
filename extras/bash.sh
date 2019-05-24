@@ -16,3 +16,25 @@ py.test file.py        # To run specific file
 make check
 make test
 make docs
+
+#----------------------------------------------------------------#
+
+### Upload a package to PyPI
+
+# Step 1: Compile your package
+python setup.py bdist_wheel
+
+# Step 2: Make sure following is setup
+pip install twine
+
+# create a .pypirc file at HOME location
+[distutils] 
+index-servers=pypi
+[pypi] 
+repository = https://upload.pypi.org/legacy/ 
+username = arpit625
+
+# Step 3: Upload on pip
+python -m twine upload dist/*
+
+
