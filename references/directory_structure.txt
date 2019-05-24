@@ -1,0 +1,65 @@
+
+# Structure 1: General module packaging
+
+Package_name:
+	- data
+		- data files
+	- description.rst
+	- Manifest.in
+	- Readme.rst/ .md
+	- package_name
+		- __init__.py
+		- python_files
+	- setup.py
+	- tests
+		- __init__.py
+		- test_sample.py
+	- reqruirements.txt
+	- docs
+		- Sphinx Documentation
+		- Makefile
+	- examples
+	- LICENSCE
+	- .travis.yml
+	- changelog.md
+	- venv
+	- .gitignore
+
+Support pip / conda install for the pacakge.
+
+################################################################
+
+# Structure 2: Data Science packaging
+
+Reference: https://medium.com/opex-analytics/5-easy-steps-to-make-your-data-science-project-reproducible-6254ab36c365
+
+DS_PROJECT:
+	- LICENSCE
+	- Makefile
+	- Readme.md
+	- data 
+		- External
+		- Internal
+		- processed
+		- raw
+	- docs
+	- models
+	- notebooks
+	- references
+	- reports
+		- figures
+	- requirements.txt
+	- setup.py
+	- src
+		- __init__.py
+		- data
+			- make_dataset.py
+		- features
+			- build_features.py
+		- models
+			- predict_model.py
+			- train_model.py
+		- visualization
+			- visuzlize.py
+	- tox.ini
+
