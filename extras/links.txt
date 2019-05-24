@@ -1,12 +1,31 @@
 
+[1]
 # Pytest tutorial
 https://www.guru99.com/pytest-tutorial.html
 
+[2]
 # Python Virtual Environment
 https://realpython.com/python-virtual-environments-a-primer/
 
+[3]
 # Upload a package to PyPI
 https://dzone.com/articles/executable-package-pip-install
 
+[4]
 # Useful to manage multiple virtual environment.
 https://realpython.com/python-virtual-environments-a-primer/#managing-virtual-environments-with-virtualenvwrapper
+
+[5]
+# Reproducible Data Science project
+https://medium.com/opex-analytics/5-easy-steps-to-make-your-data-science-project-reproducible-6254ab36c365
+- Good project Structure
+	- Use the directory structure for reference.
+- Virtual Env
+- Follow best practices while coding
+- Documentation : Sphinx
+- Automation : Makefiles, etc
+
+[6]
+# Python coding best practices - PEP8
+https://www.python.org/dev/peps/pep-0008/
+

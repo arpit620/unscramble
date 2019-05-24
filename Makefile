@@ -1,4 +1,4 @@
- .PHONY: check test docs venv
+.PHONY: check test docs venv
 
 check:
 	@echo "Hello World...!!!"
@@ -26,3 +26,7 @@ venv:
 	cd examples && python check.py
 	deactivate
 	rm -rf venv_test
+
+# make data / train_model
+# .PHONY: data
+# data:

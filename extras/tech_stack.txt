@@ -9,7 +9,8 @@
 - Python Virtual environment
 - Git/ Github
 - Python OOPS
-- Packaging Structure
+- Packaging/ Directory Structure ( Refer: [5])
+- Black: Code resturcturing
 
 # --------------------------------------------------- #
 
@@ -20,3 +21,8 @@
 - Jenkins
 - ML Flow
 - Conda
+- Cookie Cutter ( https://drivendata.github.io/cookiecutter-data-science/ )
+- Script Logging
+
+
+
