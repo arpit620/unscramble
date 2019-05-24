@@ -8,4 +8,5 @@ https://realpython.com/python-virtual-environments-a-primer/
 # Upload a package to PyPI
 https://dzone.com/articles/executable-package-pip-install
 
-
+# Useful to manage multiple virtual environment.
+https://realpython.com/python-virtual-environments-a-primer/#managing-virtual-environments-with-virtualenvwrapper

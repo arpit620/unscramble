@@ -37,4 +37,23 @@ username = arpit625
 # Step 3: Upload on pip
 python -m twine upload dist/*
 
+#----------------------------------------------------------------#
+
+# https://realpython.com/python-virtual-environments-a-primer/#managing-virtual-environments-with-virtualenvwrapper
+pip install virtualenvwrapper
+
+# settings in .bashrc file
+export WORKON_HOME=$HOME/.virtualenvs   # Optional
+export PROJECT_HOME=$HOME/projects      # Optional
+source /usr/local/bin/virtualenvwrapper.sh
+
+# Commands:
+workon
+deactivate
+mkvirtualenv
+cdvirtualenv
+rmvirtualenv
+
+#----------------------------------------------------------------#
+
 
