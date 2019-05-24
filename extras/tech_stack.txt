@@ -1,0 +1,22 @@
+
+# Explored:
+
+- Makefile
+- Sphinx
+- Pytest
+- Travis
+- Pip 
+- Python Virtual environment
+- Git/ Github
+- Python OOPS
+- Packaging Structure
+
+# --------------------------------------------------- #
+
+# Yet to explore:
+
+- Airflow
+- Bitbucket Pipelie
+- Jenkins
+- ML Flow
+- Conda
