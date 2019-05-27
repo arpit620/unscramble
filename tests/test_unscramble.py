@@ -2,6 +2,7 @@ import pytest
 from unscramble import Unscramble
 from collections import defaultdict
 
+
 @pytest.fixture
 def unscramble():
     words = Unscramble("Search")

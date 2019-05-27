@@ -2,6 +2,7 @@ from itertools import permutations
 from tqdm import tqdm
 from collections import defaultdict
 import os
+
 # from tqdm import tqdm_notebook as tqdm
 
 
@@ -30,9 +31,9 @@ class Unscramble:
 
         """
         path = os.path.abspath(os.path.dirname(__file__))
-        fileName = os.path.join(path, 'data/words_alpha.txt')
+        fileName = os.path.join(path, "data/words_alpha.txt")
         dictionary = [line.rstrip("\n") for line in open(fileName)]
-        
+
         return dictionary
 
     def _get_word_lengths(self, upto):
