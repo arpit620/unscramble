@@ -2,6 +2,8 @@ from itertools import permutations
 from tqdm import tqdm
 from collections import defaultdict
 import os
+import multiprocessing
+import itertools
 
 # from tqdm import tqdm_notebook as tqdm
 
@@ -191,3 +193,56 @@ class Unscramble:
         self._print_dict(actual_words)
 
         return actual_words
+
+
+
+    def find_words_parallel(self, upto=4, exact_length=None):
+        print("Inside parallel func")
+
+        global dictionary
+        dictionary = self._load_dictionary()
+        possible_words = self._create_permutations(upto, exact_length)
+
+        chunksize = 16384
+
+        actual_words = []
+        for word in tqdm(possible_words, desc="Dictionary Lookup"):
+
+            pool = multiprocessing.Pool(processes=1)
+            # checks = zip(range(0,len(dictionary), chunksize), [word] * len(dictionary))
+            # result = pool.map(worker, checks)
+            chunks = list(range(0,len(dictionary), chunksize))
+            # result = pool.map(worker, chunks, word * len(chunks))
+            a,b = range(0,len(dictionary), chunksize), [word]
+            ls = list(itertools.product(a,b))
+            result = pool.map(worker, ls)
+            pool.close()
+
+            # pool = multiprocessing.Manager().Pool(processes=8)
+            # # checks = zip(range(0,len(dictionary), chunksize), [word] * len(dictionary))
+            # # result = pool.map(worker, checks)
+            # chunks = list(range(0,len(dictionary), chunksize))
+            # # result = pool.map(worker, chunks, word * len(chunks))
+            # result = pool.map_async(worker, range(0,len(dictionary), chunksize), word * len(chunks) )
+            # pool.close()
+            # pool.join()
+
+            if any(result):
+                actual_words.append(word)
+
+        actual_words = self._get_defaultdict(actual_words)
+        self._print_dict(actual_words)
+
+        return actual_words        
+
+
+def worker(param_ls):
+    i, word = param_ls
+    chunksize = 16384
+    try:
+        if word in dictionary[i:i+chunksize]:
+            return True
+    except ValueError:
+        return None
+
+
