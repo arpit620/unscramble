@@ -1,0 +1,27 @@
+
+Basic mlflow:
+
+1) Tracking
+	- Generates log
+		- Parameters (Input)
+		- Eval metrics (Results)
+
+2) Projects
+	- Packaging code
+		- Reusable
+		- Reproducible
+
+	- Uses following:
+		- MLProject file
+		- conda.yml
+
+3) Models
+	- Managing & Deploying models.
+
+
+Further detail on following links:
+
+Official Documentation:
+https://www.mlflow.org/docs/latest/quickstart.html
+
+
