@@ -23,6 +23,10 @@
 - Conda
 - Cookie Cutter ( https://drivendata.github.io/cookiecutter-data-science/ )
 - Script Logging
+- Bitbucket pipelines
+- Github badges readme
+- Github hooks
+- .coverage file
 
 
 
