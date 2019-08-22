@@ -37,3 +37,6 @@ https://medium.com/@giswqs/building-a-conda-package-and-uploading-it-to-anaconda
 # Git workflow
 https://zachgoll.github.io/blog/2019/git-crash-course/#A-Simple-Effective-Git-Workflow
 
+[9]
+# DS Production
+http://www.makepit.com/ds_production

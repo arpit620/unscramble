@@ -1,6 +1,6 @@
 from unscramble import Unscramble
 
-a = Unscramble("hello")
+a = Unscramble("hellowor")
 b = a.find_words()
 
 # print(b[5])
