@@ -17,6 +17,7 @@
 # Yet to explore:
 
 - Airflow
+- Host App via Flask / Django
 - Bitbucket Pipelie
 - Jenkins
 - ML Flow
